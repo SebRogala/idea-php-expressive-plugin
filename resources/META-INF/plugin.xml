@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.sebrogala.ExpressiveGenerators</id>
+    <name>Generators for Zend Expressive project</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+      Generator for custom Zend Expressive components.<br>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      none yet
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="ExpressiveGroup" text="_Expressive Generators" description="Expressive Generators">
+            <separator/>
+            <action id="ExpressiveGenerators.NewModule" class="com.sebrogala.ExpressiveGenerators.Action.NewModuleAction"
+                    text="Expressive Module" description="Generating new Expressive Module"/>
+            <add-to-group group-id="NewGroup" anchor="after" relative-to-action="PhpNewGroup"/>
+        </group>
+    </actions>
+
+</idea-plugin>
