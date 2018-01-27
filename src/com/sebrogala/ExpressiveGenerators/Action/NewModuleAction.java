@@ -4,7 +4,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import com.sebrogala.ExpressiveGenerators.Form.TextInput;
+import com.sebrogala.ExpressiveGenerators.Form.SingleTextInput;
 import com.sebrogala.ExpressiveGenerators.Helper.FileHandler;
 import com.sebrogala.ExpressiveGenerators.Helper.PregReplaceInFile;
 import com.sebrogala.ExpressiveGenerators.Helper.Terminal;
@@ -16,7 +16,7 @@ public class NewModuleAction extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        String moduleName = TextInput.run("Provide new Module name");
+        String moduleName = SingleTextInput.run("Provide new Module name");
         if ("".equals(moduleName)) {
             return;
         }

@@ -5,13 +5,13 @@ import com.intellij.openapi.ui.Messages;
 import javax.swing.*;
 import java.awt.event.*;
 
-public class TextInput extends JDialog {
+public class SingleTextInput extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
     private JTextField userInput;
 
-    public TextInput() {
+    public SingleTextInput() {
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(buttonOK);
@@ -51,7 +51,7 @@ public class TextInput extends JDialog {
     }
 
     public static String run(String title) {
-        TextInput dialog = new TextInput();
+        SingleTextInput dialog = new SingleTextInput();
         dialog.pack();
         dialog.setLocationRelativeTo(null);
         dialog.setTitle(title);
