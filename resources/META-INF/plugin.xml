@@ -31,6 +31,11 @@
             <separator/>
             <action id="ExpressiveGenerators.NewModule" class="com.sebrogala.ExpressiveGenerators.Action.NewModuleAction"
                     text="Expressive Module" description="Generating new Expressive Module"/>
+            <action id="ExpressiveGenerators.GenericAction" class="com.sebrogala.ExpressiveGenerators.Action.NewGenericActionAction"
+                    text="Expressive Generic Action" description="Create EndPoint files structure"/>
+            <action id="ExpressiveGenerators.NewCrud" class="com.sebrogala.ExpressiveGenerators.Action.NewCrudAction"
+                    text="Expressive CRUD" description="Create full CRUD structure"/>
+            <!-- Separator for readability -->
             <add-to-group group-id="NewGroup" anchor="after" relative-to-action="PhpNewGroup"/>
         </group>
     </actions>

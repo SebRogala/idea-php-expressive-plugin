@@ -6,3 +6,4 @@
 - generate InputFilter
 - generate Service
 - generate CRUD (only as API)
+- generate Find Action

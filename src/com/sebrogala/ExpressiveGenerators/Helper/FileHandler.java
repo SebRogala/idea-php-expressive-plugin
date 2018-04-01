@@ -1,11 +1,16 @@
 package com.sebrogala.ExpressiveGenerators.Helper;
 
+import com.intellij.openapi.vfs.VirtualFileManager;
+
 import java.io.*;
 import java.util.Scanner;
 
 public class FileHandler {
 
     public static void putContents(String filePath, String content) {
+
+        File f = new File(filePath.replaceAll("(.+)\\/[\\w\\.]+$", "$1"));
+        f.mkdirs();
 
         try {
             Writer wr = new FileWriter(filePath);
@@ -33,5 +38,9 @@ public class FileHandler {
         fileScanned.close();
 
         return content;
+    }
+
+    public static void refresh() {
+        VirtualFileManager.getInstance().syncRefresh();
     }
 }

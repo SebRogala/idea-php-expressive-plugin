@@ -3,7 +3,6 @@ package com.sebrogala.ExpressiveGenerators.Action;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.sebrogala.ExpressiveGenerators.Form.SingleTextInput;
 import com.sebrogala.ExpressiveGenerators.Helper.FileHandler;
 import com.sebrogala.ExpressiveGenerators.Helper.PregReplaceInFile;
@@ -71,7 +70,7 @@ public class NewModuleAction extends AnAction {
         String[] commands = {"composer dump-autoload -d=" + expressiveRootPath};
         Terminal.run(commands);
 
-        VirtualFileManager.getInstance().asyncRefresh(null);
+        FileHandler.refresh();
     }
 
     private void createModuleFiles(String rootDir, String moduleName) {
@@ -112,12 +111,6 @@ public class NewModuleAction extends AnAction {
                 "    public function getRoutes()\n" +
                 "    {\n" +
                 "        return [\n" +
-                "            [\n" +
-                "                //'name' => 'name',\n" +
-                "                //'path' => '/',\n" +
-                "                //'middleware' => Full\\NameSpace\\Action::class,\n" +
-                "                //'allowed_methods' => ['GET'],\n" +
-                "            ],\n" +
                 "        ];\n" +
                 "    }\n" +
                 "}";
